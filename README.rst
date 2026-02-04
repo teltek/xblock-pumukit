@@ -28,7 +28,7 @@ You can enable the Pumukit XBlock in Studio through the
 advanced settings.
 
 1. From the main page of a specific course, navigate to
-   ``Settings ->    Advanced Settings`` from the top menu.
+   ``Settings -> Advanced Settings`` from the top menu.
 2. Check for the ``advanced_modules`` field, and add
    ``"pumukit"`` to the values list.
 3. Click the "Save changes" button.
