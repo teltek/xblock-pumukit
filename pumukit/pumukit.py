@@ -121,7 +121,7 @@ class PumukitXBlock(XBlock):
         return user
 
     @XBlock.json_handler
-    def submit(self, data):
+    def submit(self, data, suffix=''):
         """
         Submits all data to pumukit server
         """
@@ -146,7 +146,6 @@ class PumukitXBlock(XBlock):
             username = user.opt_attrs['edx-platform.username']
             email = user.emails[0]
 
-            username = self._get_logged_in_user()
             pumukit_url = get_api_video_url(username, video_id)
 
             language = settings.LANGUAGE_CODE

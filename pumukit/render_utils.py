@@ -2,7 +2,7 @@
 #
 
 import logging
-import pkg_resources
+from importlib.resources import files
 
 from django.template import Context, Template
 
@@ -12,9 +12,7 @@ def load_resource(resource_path):
     """
     Gets the content of a resource
     """
-    content = pkg_resources.resource_string(__name__, resource_path)
-
-    return str(content)
+    return files(__package__).joinpath(resource_path).read_text(encoding="utf-8")
 
 
 def render_template(template_path, context=None):

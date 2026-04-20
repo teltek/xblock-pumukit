@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 
-from django.conf import settings
-import settings
+from . import settings as pmk_settings
 
 import requests
 
@@ -12,7 +11,7 @@ log = logging.getLogger(__name__)
 
 def get_response(url):
     """ Get the response of a given url """
-    verify = not settings.DEBUG
+    verify = not pmk_settings.DEBUG
     try:
         r = requests.head(url, allow_redirects=True, verify=verify)
         url_code = r.status_code

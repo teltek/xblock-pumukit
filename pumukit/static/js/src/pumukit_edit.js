@@ -3,7 +3,7 @@ function PumukitEdit(runtime, element) {
 	var data = {
 	    'video_id': $('#video_id').val(),
 	};
-	var handlerUrl = runtime.handlerUrl(element, 'pumukit_submit');
+	var handlerUrl = runtime.handlerUrl(element, 'submit');
 	$('.xblock-editor-error-message', element).html();
 	$('.xblock-editor-error-message', element).css('display', 'none');
 	$.post(handlerUrl, JSON.stringify(data)).done(function(response) {

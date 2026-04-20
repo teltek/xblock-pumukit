@@ -2,7 +2,7 @@
 #
 
 from datetime import datetime
-import settings
+from . import settings
 import hashlib
 
 from urllib.parse import quote
@@ -10,7 +10,7 @@ from urllib.parse import quote
 def get_hash(email, password, domain):
     """ Get hash of Pumukit user."""
     date = datetime.now().strftime('%d/%m/%Y')
-    m = hashlib.md5("{email}{password}{date}{domain}".format(email=email, password=password, date=date, domain=domain))
+    m = hashlib.md5("{email}{password}{date}{domain}".format(email=email, password=password, date=date, domain=domain).encode('utf-8'))
 
     return m.hexdigest()
 
